@@ -19,3 +19,12 @@
     |-infrastructure  --contain infrastructure related code such as the query dispatcher, the consumer implementation, handlers
 
 ```
+
+## Messages
+Command and event objects are known as message objects, and both requires a unique identifier.
+
+### What is a Command
+A command is a combination of expressed intent.
+In other words, it describes something that you want to be done.
+It also contains the information required to undertake action based on that intent. Commands are named with a verb in the imperative mood. For example, open a card command or deposit funds command.
+
