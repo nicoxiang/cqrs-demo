@@ -38,3 +38,8 @@ and in the context of this section, messages are commands.
 
 ### Command Dispatcher
 ![Command Dispatcher UML](./images/command-dispatching.png)
+
+## Aggregate
+An Aggregate is an entity or group of entities that is always kept in a consistent state.
+The Aggregate Root is the entity within the aggregate that is responsible for maintaining this consistent state.
+This makes the aggregate the primary building block for implementing a command model in any CQRS based application.
