@@ -32,3 +32,9 @@ It also contains the information required to undertake action based on that inte
 Events are objects that describe something that happened in the application. A typical source of events is the aggregate. When something important in the aggregate occurs, it will raise an event.
 Events are always named in the past participle. For example, an event might be something like account opened event or funds deposited events
 
+## Mediator Pattern
+Simplify communication between objects in an application by introducing a single object known as the mediator that manages the distribution of messages among other objects, 
+and in the context of this section, messages are commands.
+
+### Command Dispatcher
+![Command Dispatcher UML](./images/command-dispatching.png)
