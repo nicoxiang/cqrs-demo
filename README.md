@@ -28,3 +28,7 @@ A command is a combination of expressed intent.
 In other words, it describes something that you want to be done.
 It also contains the information required to undertake action based on that intent. Commands are named with a verb in the imperative mood. For example, open a card command or deposit funds command.
 
+### What is an Event
+Events are objects that describe something that happened in the application. A typical source of events is the aggregate. When something important in the aggregate occurs, it will raise an event.
+Events are always named in the past participle. For example, an event might be something like account opened event or funds deposited events
+
