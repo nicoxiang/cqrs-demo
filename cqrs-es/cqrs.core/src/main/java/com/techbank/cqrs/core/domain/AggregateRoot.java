@@ -13,7 +13,7 @@ import java.util.logging.Logger;
  * The Aggregate Root is the entity within the aggregate that is responsible for maintaining this consistent state.
  */
 public abstract class AggregateRoot {
-    private String id;
+    protected String id;
     private int version = -1;
     /**
      * contain all the changes that are made to the aggregate in the form of events
