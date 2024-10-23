@@ -54,6 +54,6 @@ Each event that is saved should represent the version or state of an aggregate a
 
 - Events should be stored in chronological order and new events should be appended to the previous event
 
-- The state of an aggregate should be recreated bill by replaying the event store
+- The state of an aggregate should be recreatable by replaying the event store
 
 - The event store should implement optimistic concurrency control
