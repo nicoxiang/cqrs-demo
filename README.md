@@ -43,7 +43,7 @@ and in the context of this section, messages are commands.
 An Aggregate is an entity or group of entities that is always kept in a consistent state.
 The Aggregate Root is the entity within the aggregate that is responsible for maintaining this consistent state.
 This makes the aggregate the primary building block for implementing a command model in any CQRS based application.
-a
+
 ## Event Store
 Events store is a database that is used to store data as a sequence of immutable events over time, and events store is a key enabler of event sourcing.
 
@@ -57,3 +57,7 @@ Each event that is saved should represent the version or state of an aggregate a
 - The state of an aggregate should be recreatable by replaying the event store
 
 - The event store should implement optimistic concurrency control
+
+## Event handler vs Event souring handler
+The event handler resides on the query side of CQRS and affects the read database, 
+while the event sourcing handler resides on the command side and ultimately impacts the write database or event store.
