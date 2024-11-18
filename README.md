@@ -37,6 +37,11 @@ Simplify communication between objects in an application by introducing a single
 and in the context of this section, messages are commands.
 
 ### Command Dispatcher
+1. Mediator
+2. ConcreteMediator
+3. Colleague
+4. ConcreteColleague
+
 ![Command Dispatcher UML](./images/command-dispatching.png)
 
 ## Aggregate
@@ -61,3 +66,7 @@ Each event that is saved should represent the version or state of an aggregate a
 ## Event handler vs Event souring handler
 The event handler resides on the query side of CQRS and affects the read database, 
 while the event sourcing handler resides on the command side and ultimately impacts the write database or event store.
+
+### Query Dispatcher
+![Query Dispatcher UML](./images/query-dispatching.png)
+
