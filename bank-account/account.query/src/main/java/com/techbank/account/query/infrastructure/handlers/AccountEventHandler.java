@@ -7,9 +7,11 @@ import com.techbank.account.common.events.FundsWithdrawnEvent;
 import com.techbank.account.query.domain.AccountRepository;
 import com.techbank.account.query.domain.BankAccount;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 
+@Service
 public class AccountEventHandler implements EventHandler{
 
     @Autowired

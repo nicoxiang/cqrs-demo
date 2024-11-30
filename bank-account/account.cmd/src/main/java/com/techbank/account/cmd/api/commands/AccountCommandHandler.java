@@ -40,4 +40,9 @@ public class AccountCommandHandler implements CommandHandler{
         aggregate.closeAccount();
         eventSouringHandler.save(aggregate);
     }
+
+    @Override
+    public void handle(RestoreReadDbCommand command) {
+        eventSouringHandler.republishEvents();
+    }
 }

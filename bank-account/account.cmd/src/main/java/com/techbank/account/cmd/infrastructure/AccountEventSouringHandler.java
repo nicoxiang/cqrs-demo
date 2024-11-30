@@ -5,6 +5,7 @@ import com.techbank.cqrs.core.domain.AggregateRoot;
 import com.techbank.cqrs.core.events.BaseEvent;
 import com.techbank.cqrs.core.handlers.EventSouringHandler;
 import com.techbank.cqrs.core.infrastructure.EventStore;
+import com.techbank.cqrs.core.producers.EventProducer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
@@ -17,6 +18,9 @@ public class AccountEventSouringHandler implements EventSouringHandler<AccountAg
 
     @Autowired
     private EventStore eventStore;
+
+    @Autowired
+    private EventProducer eventProducer;
 
     @Override
     public void save(AggregateRoot aggregate) {
@@ -34,5 +38,18 @@ public class AccountEventSouringHandler implements EventSouringHandler<AccountAg
             aggregate.setVersion(latestVersion);
         }
         return aggregate;
+    }
+
+    @Override
+    public void republishEvents() {
+        List<String> aggregateIds = eventStore.getAggregateIds();
+        for (String aggregateId : aggregateIds) {
+            AccountAggregate aggregate = getById(aggregateId);
+            if(aggregate == null || ! aggregate.getActive()) continue;
+            List<BaseEvent> events = eventStore.getEvents(aggregateId);
+            for (BaseEvent event : events) {
+                eventProducer.produce(event.getClass().getSimpleName(), event);
+            }
+        }
     }
 }
