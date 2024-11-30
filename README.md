@@ -1,5 +1,7 @@
 # cqrs-demo
 
+## Learn Udemy course - Java Microservices: CQRS & Event Sourcing with Kafka
+
 ## Project structure
 
 ```
